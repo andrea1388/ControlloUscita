@@ -1,0 +1,19 @@
+{
+  "name": "ControlloUscita",
+  "keywords": "controllo uscita, pulse, onda quadra",
+  "description": "Libreria per Arduino per controllare un uscita. Genera impulsi On o Off di durata definita oppure onda quadra",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/andrea1388/ControlloUscita"
+  },
+  "authors":
+  [
+    {
+      "name": "Andrea Carrara",
+      "email": "andrea.carrara@libero.it",
+      "url": "https://github.com/andrea1388",
+      "maintainer": true
+    }
+  ]
+}

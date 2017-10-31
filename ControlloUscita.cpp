@@ -24,8 +24,14 @@ void ControlloUscita::Elabora() {
             digitalWrite(_pin,von); 
             azione=NIENTE;
             break;
-        case ONOFF:                      
-            tinizio=millis();
+        case ONOFF:
+            digitalWrite(_pin,voff); 
+            durata=Toff;
+            tinizio=now;
+            azione=OFF;
+            break;
+        case QUADRA:                      
+            tinizio=now;
             if(isOn()) {
                 digitalWrite(_pin,voff); 
                 durata=_toff; 
@@ -45,6 +51,14 @@ void ControlloUscita::On(unsigned long Ton) {
     durata=Ton;
     tinizio=millis();
     azione=OFF;
+}
+
+void ControlloUscita::OnOff(unsigned long Ton, unsigned long Toff) {
+    if(azione!=NIENTE) return;
+    digitalWrite(_pin,von);
+    durata=Ton;
+    tinizio=millis();
+    azione=ONOFF;
 }
 
 void ControlloUscita::Off(unsigned long Toff) {
@@ -75,7 +89,7 @@ void ControlloUscita::OndaQuadra(unsigned long TOn, unsigned long TOff) {
     digitalWrite(_pin,von);
     durata=TOn;
     tinizio=millis();
-    azione=ONOFF;
+    azione=QUADRA;
 
 }
 

@@ -1,7 +1,7 @@
 {
   "name": "ControlloUscita",
   "keywords": "controllo uscita, pulse, onda quadra",
-  "description": "Libreria per Arduino per controllare un uscita. Genera impulsi On o Off di durata definita oppure onda quadra",
+  "description": "Libreria per Arduino per controllare un uscita. Genera impulsi On o Off di durata definita oppure ad onda quadra. Tutti i metodi di impostazione sono non bloccanti. Il metodo Elabora() deve essere richiamato nel loop()",
   "repository":
   {
     "type": "git",

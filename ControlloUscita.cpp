@@ -26,7 +26,7 @@ void ControlloUscita::Elabora() {
             break;
         case ONOFF:
             digitalWrite(_pin,voff); 
-            durata=Toff;
+            durata=_toff;
             tinizio=now;
             azione=OFF;
             break;
@@ -55,6 +55,8 @@ void ControlloUscita::On(unsigned long Ton) {
 
 void ControlloUscita::OnOff(unsigned long Ton, unsigned long Toff) {
     if(azione!=NIENTE) return;
+    _ton=Ton;
+    _toff=Toff;
     digitalWrite(_pin,von);
     durata=Ton;
     tinizio=millis();
